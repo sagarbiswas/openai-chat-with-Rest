@@ -3,14 +3,16 @@
     "Connect.Api": {
       "commandName": "Project",
       "launchBrowser": true,
+      "launchUrl": "health",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "https://localhost:55827;http://localhost:55828"
+      "applicationUrl": "https://localhost:44398"
     },
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
+      "launchUrl": "health",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

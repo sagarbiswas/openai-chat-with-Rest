@@ -29,7 +29,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://localhost:443
 function App() {
   const [messages, setMessages] = useState<Message[]>([])
   const [prompt, setPrompt] = useState('')
-  const [transport, setTransport] = useState<Transport>('websocket')
+  const [transport, setTransport] = useState<Transport>('rest')
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
   const connection = useMemo(
