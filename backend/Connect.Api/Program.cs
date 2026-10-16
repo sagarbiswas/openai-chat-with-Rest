@@ -20,7 +20,7 @@ var model = Environment.GetEnvironmentVariable("OPENAI_MODEL")
 builder.Services.AddSingleton<IChatOrchestrator>(
     new LangChainChatOrchestrator(apiKey, model));
 builder.Services.AddSignalR();
-builder.Services.AddCors(options =>
+/*builder.Services.AddCors(options =>
 {
     options.AddPolicy("Frontend", policy =>
     {
@@ -29,6 +29,17 @@ builder.Services.AddCors(options =>
                 "https://localhost:5173",
                 "http://127.0.0.1:5173",
                 "https://127.0.0.1:5173")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});*/
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Frontend", policy =>
+    {
+        policy.SetIsOriginAllowed(_ => true)
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();

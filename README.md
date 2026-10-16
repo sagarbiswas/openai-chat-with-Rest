@@ -60,7 +60,7 @@ npm --prefix frontend install
 npm --prefix frontend run dev
 ```
 
-Open the Vite URL shown in the terminal (normally `http://localhost:5173`). The frontend sends REST and SignalR requests to `https://localhost:44398` by default. Set `VITE_API_BASE_URL` if the backend uses a different origin.
+Open the Vite URL shown in the terminal (normally `http://localhost:5173`). By default, the frontend sends REST and SignalR requests through the Vite proxy, which forwards them to `https://localhost:44398`. Set `VITE_API_BASE_URL` if the backend uses a different origin. In development, the proxy accepts the backend's local HTTPS certificate; for direct browser-to-backend requests, trust the .NET development certificate.
 
 ## Start and debug in VS Code
 
