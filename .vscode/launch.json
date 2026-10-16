@@ -1,0 +1,41 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET: Connect API",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-api",
+      "program": "${workspaceFolder}/backend/Connect.Api/bin/Debug/net10.0/Connect.Api.dll",
+      "cwd": "${workspaceFolder}/backend/Connect.Api",
+      "args": [
+        "--urls",
+        "https://localhost:44398"
+      ],
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "https://localhost:44398"
+      },
+      "console": "integratedTerminal",
+      "stopAtEntry": false
+    },
+    {
+      "name": "React: Connect UI",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "preLaunchTask": "start-frontend",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/frontend"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Connect AI: Full Stack",
+      "configurations": [
+        ".NET: Connect API",
+        "React: Connect UI"
+      ],
+      "stopAll": true
+    }
+  ]
+}
