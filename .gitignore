@@ -2,5 +2,6 @@ node_modules/
 .env
 **/bin/
 **/obj/
+backend/Connect.Api/.vs/
 frontend/dist/
 .env.local
